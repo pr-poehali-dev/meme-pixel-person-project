@@ -118,8 +118,13 @@ const Index = () => {
           <img 
             src="/img/0ef96eae-c734-4d77-9b49-006e0dcb4c2f.jpg" 
             alt="Pixel Character" 
-            className="w-32 h-32 pixelated cursor-pointer hover:scale-110 transition-transform"
-            style={{ imageRendering: 'pixelated' }}
+            className="w-32 h-32 cursor-pointer hover:scale-110 transition-transform"
+            style={{ 
+              imageRendering: 'pixelated',
+              imageRendering: '-moz-crisp-edges',
+              imageRendering: '-webkit-crisp-edges',
+              imageRendering: 'crisp-edges'
+            }}
           />
           {hasShovel && (
             <div className="absolute -right-8 top-4 text-2xl animate-bounce">
@@ -195,14 +200,7 @@ const Index = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        .pixelated {
-          image-rendering: -moz-crisp-edges;
-          image-rendering: -webkit-crisp-edges;
-          image-rendering: pixelated;
-          image-rendering: crisp-edges;
-        }
-      `}</style>
+
     </div>
   );
 };
